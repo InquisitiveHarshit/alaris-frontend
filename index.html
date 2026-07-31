@@ -1,20 +1,2623 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml"
-    href="https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764587281/Gaurs_dsqmnw.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./src/index.css" rel="stylesheet" />
-  <title>Gaurs</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Gaur Alaris — Where Life Spreads Its Wings | Sector-22D, Yamuna Expressway
+    </title>
+    <meta name="description"
+        content="Gaur Alaris by Gaurs Group — Art Deco residences on Sector-22D, Yamuna Expressway, minutes from Noida International Airport. Register your interest." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Jost:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --ink: #0b201c;
+            --teal-deep: #0d2b26;
+            --teal: #123a33;
+            --teal-light: #1c5148;
+            --gold: #c9a24a;
+            --gold-bright: #e6c874;
+            --cream: #f6f0e2;
+            --cream-dim: #efe6d2;
+            --line: rgba(201, 162, 74, 0.35);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            --radius: 2px;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "Jost", sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: "Cinzel", serif;
+            letter-spacing: 0.03em;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .script {
+            font-family: "Marcellus", serif;
+            font-style: normal;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "Jost", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            font-size: 12px;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+            display: inline-block;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 34px;
+            border-radius: var(--radius);
+            font-family: "Jost", sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1px solid var(--gold);
+            transition: all 0.25s ease;
+            font-weight: 500;
+        }
+
+        .btn-solid {
+            background: var(--gold);
+            color: var(--teal-deep);
+        }
+
+        .btn-solid:hover {
+            background: var(--gold-bright);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold-bright);
+        }
+
+        .btn-outline:hover {
+            background: rgba(201, 162, 74, 0.12);
+        }
+
+        /* ---------- feather svg signature ---------- */
+        .feather-divider {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .feather-divider svg {
+            height: 46px;
+            opacity: 0.85;
+        }
+
+        /* ---------- top bar ---------- */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(11, 32, 28, 0.92);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 28px;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .brandmark {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--cream);
+        }
+
+        .brandmark svg {
+            height: 30px;
+            width: auto;
+        }
+
+        .brandmark .name {
+            font-family: "Cinzel", serif;
+            font-size: 17px;
+            letter-spacing: 0.18em;
+            color: var(--gold-bright);
+        }
+
+        .topnav {
+            display: flex;
+            gap: 34px;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .topnav a {
+            color: var(--cream-dim);
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .topnav a:hover {
+            opacity: 1;
+            color: var(--gold-bright);
+        }
+
+        .topbar .btn {
+            padding: 11px 22px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .topnav {
+                display: none;
+            }
+        }
+
+        /* ---------- hero ---------- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(ellipse at 20% 20%,
+                    rgba(201, 162, 74, 0.1),
+                    transparent 55%),
+                radial-gradient(ellipse at 85% 80%,
+                    rgba(28, 81, 72, 0.55),
+                    transparent 60%),
+                linear-gradient(160deg,
+                    var(--ink) 0%,
+                    var(--teal-deep) 55%,
+                    #08211d 100%);
+            overflow: hidden;
+            padding-top: 110px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(115deg,
+                    rgba(201, 162, 74, 0.045) 0px,
+                    rgba(201, 162, 74, 0.045) 1px,
+                    transparent 1px,
+                    transparent 90px);
+            pointer-events: none;
+        }
+
+        .hero-plume {
+            position: absolute;
+            right: -6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 620px;
+            max-width: 60vw;
+            opacity: 0.9;
+            animation: sway 9s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-52%) rotate(1.2deg);
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero h1 {
+            color: var(--cream);
+            font-size: clamp(38px, 5vw, 64px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold-bright);
+        }
+
+        .hero p.lead {
+            color: rgba(246, 240, 226, 0.78);
+            max-width: 480px;
+            font-size: 17px;
+            margin-bottom: 34px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            margin-top: 52px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats div {
+            border-left: 1px solid var(--line);
+            padding-left: 16px;
+        }
+
+        .hero-stats .num {
+            font-family: "Cinzel", serif;
+            color: var(--gold-bright);
+            font-size: 24px;
+        }
+
+        .hero-stats .lbl {
+            font-size: 12px;
+            color: rgba(246, 240, 226, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+        }
+
+        /* ---------- lead form (card) ---------- */
+        .lead-card {
+            background: linear-gradient(180deg,
+                    rgba(246, 240, 226, 0.98),
+                    rgba(239, 230, 210, 0.98));
+            border: 1px solid var(--gold);
+            border-radius: var(--radius);
+            padding: 38px 34px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .lead-card::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--gold-bright),
+                    transparent);
+        }
+
+        .lead-card h3 {
+            font-size: 20px;
+            color: var(--teal-deep);
+            margin-bottom: 6px;
+        }
+
+        .lead-card .sub {
+            font-size: 13px;
+            color: var(--teal);
+            opacity: 0.75;
+            margin-bottom: 22px;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--teal);
+            margin-bottom: 6px;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid rgba(18, 58, 51, 0.25);
+            border-radius: var(--radius);
+            background: #fff;
+            font-family: "Jost", sans-serif;
+            font-size: 14px;
+            color: var(--ink);
+        }
+
+        .field input:focus,
+        .field select:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 1px;
+        }
+
+        .lead-card .btn-solid {
+            width: 100%;
+            padding: 15px;
+            margin-top: 6px;
+        }
+
+        .lead-fine {
+            font-size: 11px;
+            color: var(--teal);
+            opacity: 0.65;
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        .lead-thanks {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .lead-thanks.show {
+            display: block;
+        }
+
+        .lead-thanks .check {
+            font-size: 38px;
+            color: var(--teal-light);
+            margin-bottom: 10px;
+        }
+
+        .lead-form.hide {
+            display: none;
+        }
+
+        /* ---------- section shells ---------- */
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: linear-gradient(180deg, var(--teal-deep), var(--ink));
+            color: var(--cream);
+        }
+
+        .section-cream {
+            background: var(--cream);
+        }
+
+        .section-cream-dim {
+            background: var(--cream-dim);
+        }
+
+        .section-head {
+            max-width: 720px;
+            margin-bottom: 64px;
+        }
+
+        .section-head.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-head h2 {
+            font-size: clamp(28px, 3.4vw, 42px);
+            line-height: 1.2;
+        }
+
+        .section-dark .section-head h2 {
+            color: var(--cream);
+        }
+
+        .section-dark .eyebrow {
+            color: var(--gold-bright);
+        }
+
+        /* ---------- location / connectivity ---------- */
+        .story-line {
+            font-family: "Marcellus", serif;
+            font-size: clamp(20px, 2.4vw, 28px);
+            color: var(--cream);
+            line-height: 1.5;
+            max-width: 820px;
+        }
+
+        .story-line .accent {
+            color: var(--gold-bright);
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-top: 60px;
+        }
+
+        .stat-strip div {
+            padding: 28px 22px;
+            border-left: 1px solid var(--line);
+        }
+
+        .stat-strip div:first-child {
+            border-left: none;
+        }
+
+        .stat-strip strong {
+            display: block;
+            font-family: "Cinzel", serif;
+            color: var(--gold-bright);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .stat-strip p {
+            font-size: 14px;
+            color: rgba(246, 240, 226, 0.75);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* airport ring */
+        .ring-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ring-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+        }
+
+        .ring-fact {
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+        }
+
+        .ring-fact h4 {
+            font-family: "Cinzel", serif;
+            font-size: 14px;
+            color: var(--gold-bright);
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        .ring-fact p {
+            font-size: 14px;
+            color: rgba(246, 240, 226, 0.75);
+            margin: 0;
+        }
+
+        .ring-visual {
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 40%,
+                    rgba(201, 162, 74, 0.12),
+                    transparent 70%);
+        }
+
+        .ring-visual .inner {
+            width: 70%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .ring-visual .inner .big {
+            font-family: "Cinzel", serif;
+            font-size: 15px;
+            color: var(--gold-bright);
+            letter-spacing: 0.05em;
+        }
+
+        .ring-visual .inner .small {
+            font-size: 12px;
+            color: rgba(246, 240, 226, 0.6);
+            margin-top: 6px;
+            max-width: 170px;
+        }
+
+        @media (max-width: 900px) {
+            .ring-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .ring-facts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* industrial ecosystem */
+        .chip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .chip {
+            border: 1px solid rgba(18, 58, 51, 0.18);
+            padding: 16px 18px;
+            font-size: 13.5px;
+            background: #fff;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chip::before {
+            content: "◆";
+            color: var(--gold);
+            font-size: 9px;
+        }
+
+        @media (max-width: 750px) {
+            .chip-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--line);
+        }
+
+        .job-cell {
+            padding: 26px 20px;
+            border-left: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .job-cell:nth-child(4n + 1) {
+            border-left: none;
+        }
+
+        .job-cell .n {
+            font-family: "Cinzel", serif;
+            font-size: 26px;
+            color: var(--gold-bright);
+        }
+
+        .job-cell .t {
+            font-size: 13px;
+            color: rgba(246, 240, 226, 0.7);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .job-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .job-cell:nth-child(4n + 1) {
+                border-left: 1px solid var(--line);
+            }
+
+            .job-cell:nth-child(2n + 1) {
+                border-left: none;
+            }
+        }
+
+        .investor-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 40px;
+            margin-top: 20px;
+        }
+
+        .investor {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 0;
+            border-bottom: 1px dashed rgba(18, 58, 51, 0.2);
+            font-size: 14px;
+        }
+
+        .investor b {
+            white-space: nowrap;
+        }
+
+        .investor span {
+            color: var(--teal);
+            opacity: 0.75;
+            text-align: right;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .investor-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* legacy stat band */
+        .legacy-band {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--teal-deep);
+            color: var(--cream);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .legacy-cell {
+            padding: 36px 26px;
+            text-align: center;
+            border-left: 1px solid var(--line);
+        }
+
+        .legacy-cell:first-child {
+            border-left: none;
+        }
+
+        .legacy-cell .n {
+            font-family: "Cinzel", serif;
+            font-size: 30px;
+            color: var(--gold-bright);
+        }
+
+        .legacy-cell .t {
+            font-size: 12.5px;
+            margin-top: 8px;
+            color: rgba(246, 240, 226, 0.72);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .legacy-band {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .legacy-cell {
+                border-top: 1px solid var(--line);
+            }
+        }
+
+        /* project specs */
+        .spec-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .spec-visual {
+            aspect-ratio: 4/3;
+            background: linear-gradient(160deg, var(--teal), var(--teal-deep));
+            border: 1px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 26px;
+        }
+
+        .spec-visual svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        .spec-visual .cap {
+            position: relative;
+            z-index: 2;
+            color: var(--gold-bright);
+            font-family: "Marcellus", serif;
+            font-size: 14px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(18, 58, 51, 0.15);
+            font-size: 15px;
+        }
+
+        .spec-list li b {
+            font-family: "Cinzel", serif;
+            font-size: 14px;
+            color: var(--teal-deep);
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 900px) {
+            .spec-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* distance dial */
+        .dial-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .dial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 900px;
+            margin-top: 30px;
+        }
+
+        .dial {
+            border: 1px solid var(--line);
+            padding: 24px 20px;
+            text-align: center;
+            border-radius: var(--radius);
+            background: rgba(246, 240, 226, 0.03);
+        }
+
+        .dial .km {
+            font-family: "Cinzel", serif;
+            color: var(--gold-bright);
+            font-size: 22px;
+        }
+
+        .dial .lbl2 {
+            font-size: 13px;
+            color: rgba(246, 240, 226, 0.7);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 700px) {
+            .dial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* amenity zones (tabs) */
+        .zone-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+
+        .zone-tab {
+            padding: 10px 20px;
+            border: 1px solid rgba(18, 58, 51, 0.25);
+            border-radius: 30px;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            background: #fff;
+            color: var(--teal-deep);
+            transition: all 0.2s;
+        }
+
+        .zone-tab.active,
+        .zone-tab:hover {
+            background: var(--teal-deep);
+            color: var(--gold-bright);
+            border-color: var(--teal-deep);
+        }
+
+        .zone-panels {
+            position: relative;
+        }
+
+        .zone-panel {
+            display: none;
+        }
+
+        .zone-panel.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .zone-panel h3 {
+            font-size: 24px;
+            color: var(--teal-deep);
+            margin-bottom: 18px;
+        }
+
+        .zone-panel ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+        }
+
+        .zone-panel li {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(18, 58, 51, 0.1);
+        }
+
+        .zone-visual {
+            aspect-ratio: 5/4;
+            background: linear-gradient(150deg, var(--teal-deep), var(--teal));
+            border: 1px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .zone-visual svg {
+            width: 100%;
+            height: 100%;
+            opacity: 0.55;
+        }
+
+        @media (max-width: 850px) {
+            .zone-panel.active {
+                grid-template-columns: 1fr;
+            }
+
+            .zone-panel ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* master plan */
+        .plan-note {
+            border-left: 3px solid var(--gold);
+            padding: 20px 26px;
+            background: rgba(255, 255, 255, 0.04);
+            max-width: 600px;
+            font-size: 14.5px;
+        }
+
+        /* pricing */
+        .price-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+        }
+
+        table.price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        table.price-table th {
+            background: var(--teal-deep);
+            color: var(--gold-bright);
+            text-align: left;
+            padding: 12px 16px;
+            font-family: "Cinzel", serif;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            font-size: 12.5px;
+            text-transform: uppercase;
+        }
+
+        table.price-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid rgba(18, 58, 51, 0.12);
+        }
+
+        table.price-table tr:nth-child(even) td {
+            background: rgba(18, 58, 51, 0.03);
+        }
+
+        .bsp-banner {
+            background: var(--teal-deep);
+            color: var(--cream);
+            padding: 26px 30px;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 26px;
+        }
+
+        .bsp-banner .l {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(246, 240, 226, 0.7);
+        }
+
+        .bsp-banner .v {
+            font-family: "Cinzel", serif;
+            font-size: 26px;
+            color: var(--gold-bright);
+            margin-top: 4px;
+        }
+
+        .charges-list {
+            margin-top: 24px;
+        }
+
+        .charges-list .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(18, 58, 51, 0.2);
+            font-size: 14px;
+        }
+
+        .payment-plan .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(18, 58, 51, 0.12);
+            font-size: 14px;
+        }
+
+        .payment-plan .row b {
+            font-family: "Cinzel", serif;
+            color: var(--gold-bright);
+            font-size: 13px;
+        }
+
+        .payment-plan {
+            background: var(--teal-deep);
+            color: var(--cream);
+            padding: 30px 32px;
+            border-radius: var(--radius);
+        }
+
+        .disclaimer {
+            font-size: 11.5px;
+            opacity: 0.6;
+            margin-top: 22px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .price-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* final CTA / footer */
+        .final-cta {
+            text-align: center;
+            padding: 110px 0;
+            background:
+                radial-gradient(ellipse at 50% 0%,
+                    rgba(201, 162, 74, 0.15),
+                    transparent 60%),
+                linear-gradient(180deg, var(--ink), var(--teal-deep));
+        }
+
+        .final-cta h2 {
+            color: var(--cream);
+            font-size: clamp(30px, 4vw, 46px);
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            color: rgba(246, 240, 226, 0.7);
+            max-width: 520px;
+            margin: 0 auto 36px;
+        }
+
+        footer {
+            background: var(--ink);
+            color: rgba(246, 240, 226, 0.55);
+            padding: 50px 0 30px;
+            font-size: 12.5px;
+        }
+
+        .foot-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 30px;
+            margin-bottom: 22px;
+        }
+
+        .foot-grid .col b {
+            color: var(--gold-bright);
+            display: block;
+            margin-bottom: 8px;
+            font-family: "Cinzel", serif;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .foot-grid .col p {
+            margin: 0 0 4px;
+        }
+
+        /* sticky mobile bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 300;
+            background: var(--teal-deep);
+            border-top: 1px solid var(--gold);
+            padding: 12px 18px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .sticky-cta span {
+            color: var(--cream);
+            font-size: 13px;
+        }
+
+        @media (max-width: 760px) {
+            .sticky-cta {
+                display: flex;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-plume {
+                display: none;
+            }
+
+            body {
+                padding-bottom: 66px;
+            }
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        /* ---------- gated (blurred) pricing / sizing data ---------- */
+        .gate-wrap {
+            position: relative;
+        }
+
+        .gate-content {
+            filter: blur(7px);
+            user-select: none;
+            pointer-events: none;
+            transition: filter 0.3s ease;
+        }
+
+        body.unlocked .gate-content {
+            filter: none;
+            user-select: auto;
+            pointer-events: auto;
+        }
+
+        body.unlocked .gate-overlay {
+            display: none;
+        }
+
+        .gate-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(180deg,
+                    rgba(11, 32, 28, 0.06),
+                    rgba(11, 32, 28, 0.14));
+        }
+
+        .gate-overlay .lock {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            background: rgba(246, 240, 226, 0.9);
+        }
+
+        .gate-overlay p {
+            font-size: 13px;
+            color: var(--teal-deep);
+            max-width: 260px;
+            margin: 0;
+            background: rgba(246, 240, 226, 0.85);
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .section-dark .gate-overlay p {
+            color: var(--cream);
+            background: rgba(11, 32, 28, 0.55);
+        }
+
+        .gate-overlay .btn {
+            padding: 11px 24px;
+            font-size: 12px;
+        }
+
+        /* small inline gate (used for hero stat chips) */
+        .gate-inline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gate-inline .gate-content {
+            filter: blur(5px);
+            display: inline-block;
+        }
+
+        .gate-inline .gate-pill {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .gate-inline .gate-pill span {
+            font-size: 13px;
+            color: var(--gold-bright);
+        }
+
+        body.unlocked .gate-inline .gate-pill {
+            display: none;
+        }
+
+        body.unlocked .gate-inline .gate-content {
+            filter: none;
+        }
+
+        /* ---------- unlock modal ---------- */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: rgba(8, 20, 18, 0.72);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-card {
+            max-width: 420px;
+            width: 100%;
+            background: linear-gradient(180deg,
+                    rgba(246, 240, 226, 0.99),
+                    rgba(239, 230, 210, 0.99));
+            border: 1px solid var(--gold);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-card::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--gold-bright),
+                    transparent);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: var(--teal-deep);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-card .eyebrow {
+            color: var(--gold);
+        }
+
+        .modal-card h3 {
+            font-size: 20px;
+            color: var(--teal-deep);
+            margin-bottom: 6px;
+        }
+
+        .modal-card .sub {
+            font-size: 13px;
+            color: var(--teal);
+            opacity: 0.75;
+            margin-bottom: 22px;
+        }
+
+        .modal-thanks {
+            display: none;
+            text-align: center;
+            padding: 14px 0;
+        }
+
+        .modal-thanks.show {
+            display: block;
+        }
+
+        .modal-thanks .check {
+            font-size: 38px;
+            color: var(--teal-light);
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="brandmark">
+                <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 4 L34 40 L26 40 Z" fill="#c9a24a" />
+                    <path d="M18 8 L24 42 L14 40 Z" fill="#c9a24a" opacity="0.85" />
+                    <path d="M42 8 L36 42 L46 40 Z" fill="#c9a24a" opacity="0.85" />
+                    <path d="M8 14 L18 44 L4 40 Z" fill="#c9a24a" opacity="0.6" />
+                    <path d="M52 14 L42 44 L56 40 Z" fill="#c9a24a" opacity="0.6" />
+                    <path d="M22 44 Q30 60 38 44 Q30 50 22 44Z" fill="#c9a24a" />
+                </svg>
+                <span class="name">Gaur Alaris</span>
+            </div>
+            <div class="topnav">
+                <a href="#location">Location</a>
+                <a href="#project">The Project</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#pricing">Price &amp; Plan</a>
+                <a href="#gaurs">Gaurs Group</a>
+            </div>
+            <a href="#enquire" class="btn btn-solid">Enquire Now</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <svg class="hero-plume" viewBox="0 0 400 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g opacity="0.9">
+                <path d="M200 30 L215 260 L185 260 Z" stroke="#c9a24a" stroke-width="1.2" fill="none" />
+                <path d="M150 45 L175 265 L135 258 Z" stroke="#c9a24a" stroke-width="1.2" fill="none" opacity="0.85" />
+                <path d="M250 45 L225 265 L265 258 Z" stroke="#c9a24a" stroke-width="1.2" fill="none" opacity="0.85" />
+                <path d="M105 70 L145 270 L95 258 Z" stroke="#c9a24a" stroke-width="1.2" fill="none" opacity="0.6" />
+                <path d="M295 70 L255 270 L305 258 Z" stroke="#c9a24a" stroke-width="1.2" fill="none" opacity="0.6" />
+                <circle cx="200" cy="130" r="5" fill="#c9a24a" />
+                <circle cx="160" cy="150" r="4" fill="#c9a24a" opacity="0.8" />
+                <circle cx="240" cy="150" r="4" fill="#c9a24a" opacity="0.8" />
+                <path d="M140 300 Q200 420 260 300 Q200 360 140 300Z" stroke="#c9a24a" stroke-width="1.2" fill="none" />
+            </g>
+        </svg>
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">Sector-22D · Yamuna Expressway</div>
+                <h1>Where <em>Life</em><br />Spreads Its Wings</h1>
+                <p class="lead">
+                    An Art Deco residential landmark from Gaurs Group — 11.8 acres, 8
+                    towers, and a 100,000 sq. ft. clubhouse, minutes from Noida
+                    International Airport.
+                </p>
+                <div class="hero-cta-row">
+                    <a href="#enquire" class="btn btn-solid">Get Price List &amp; Floor Plans</a>
+                    <a href="#project" class="btn btn-outline">Explore The Project</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="num">34</div>
+                        <div class="lbl">Storey Towers</div>
+                    </div>
+                    <div>
+                        <div class="gate-inline">
+                            <div class="gate-content">
+                                <div class="num">1550–1950</div>
+                            </div>
+                            <div class="gate-pill" onclick="openGate()">
+                                <span>🔒 Unlock</span>
+                            </div>
+                        </div>
+                        <div class="lbl">Sq. Ft. Homes</div>
+                    </div>
+                    <div>
+                        <div class="num">16 Km</div>
+                        <div class="lbl">To Noida Int'l Airport</div>
+                    </div>
+                    <div>
+                        <div class="gate-inline">
+                            <div class="gate-content">
+                                <div class="num">₹8,499</div>
+                            </div>
+                            <div class="gate-pill" onclick="openGate()">
+                                <span>🔒 Unlock</span>
+                            </div>
+                        </div>
+                        <div class="lbl">Per Sq. Ft. Onwards*</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lead-card" id="enquire">
+                <div class="lead-form" id="leadForm">
+                    <h3>Register Your Interest</h3>
+                    <div class="sub">
+                        Get the price list, floor plans &amp; a callback from our sales
+                        team.
+                    </div>
+                    <form id="enquiryForm">
+                        <div class="field">
+                            <label for="fname">Full Name</label>
+                            <input type="text" id="fname" name="fname" placeholder="Your name" required />
+                        </div>
+                        <div class="field">
+                            <label for="fphone">Phone Number</label>
+                            <input type="tel" id="fphone" name="fphone" placeholder="+91 98765 43210" required />
+                        </div>
+                        <div class="field">
+                            <label for="femail">Email Address</label>
+                            <input type="email" id="femail" name="femail" placeholder="you@example.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="fconfig">Interested Configuration</label>
+                            <select id="fconfig" name="fconfig">
+                                <option>1550 Sq. Ft. Residence</option>
+                                <option>1950 Sq. Ft. Residence</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-solid">
+                            Request Callback
+                        </button>
+                        <div class="lead-fine">
+                            RERA No. UPRERAPRJ950965/07/2026 · By submitting you agree to be
+                            contacted by our sales team.
+                        </div>
+                    </form>
+                </div>
+                <div class="lead-thanks" id="leadThanks">
+                    <div class="check">✓</div>
+                    <h3>Thank you.</h3>
+                    <p style="font-size: 14px; color: var(--teal)">
+                        Your details have been received. Our team will call you shortly
+                        with the price list and floor plans for Gaur Alaris.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION STORY -->
+    <section class="section-dark" id="location">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">
+                    Every Great Transformation Begins With Movement
+                </div>
+                <h2>Across NCR, a new direction<br />is becoming visible.</h2>
+            </div>
+            <p class="story-line">
+                Not announced loudly. But built deliberately —<br />
+                <span class="accent">expressways</span>,
+                <span class="accent">infrastructure corridors</span>,
+                <span class="accent">institutional investment</span> and
+                <span class="accent">aviation-led expansion</span>, together shaping
+                the next chapter of the region.
+            </p>
+
+            <div class="stat-strip">
+                <div>
+                    <strong>165 Km</strong>
+                    <p>Yamuna Expressway seamlessly connects the NCR region to Agra.</p>
+                </div>
+                <div>
+                    <strong>India's Largest Airport</strong>
+                    <p>
+                        Home to Noida International Airport, opening new gateways for
+                        growth.
+                    </p>
+                </div>
+                <div>
+                    <strong>Thriving Ecosystem</strong>
+                    <p>
+                        Upcoming public and private developments shaping a thriving
+                        economic ecosystem.
+                    </p>
+                </div>
+                <div>
+                    <strong>Seamless Connectivity</strong>
+                    <p>
+                        Enabling seamless connectivity for people, businesses and
+                        investments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIRPORT -->
+    <section class="section-dark" style="padding-top: 0">
+        <div class="container">
+            <div class="ring-wrap">
+                <div>
+                    <div class="eyebrow">Noida International Airport</div>
+                    <h2 style="color: var(--cream); font-size: 32px; margin-bottom: 26px">
+                        A new gateway to growth
+                    </h2>
+                    <div class="ring-facts">
+                        <div class="ring-fact">
+                            <h4>India's Largest Airport</h4>
+                            <p>
+                                Planned among the world's largest aviation hubs at full
+                                build-out.
+                            </p>
+                        </div>
+                        <div class="ring-fact">
+                            <h4>100% FDI</h4>
+                            <p>
+                                India's first airport developed with 100% foreign direct
+                                investment.
+                            </p>
+                        </div>
+                        <div class="ring-fact">
+                            <h4>1,300+ Hectares</h4>
+                            <p>Spread across a vast, master-planned footprint.</p>
+                        </div>
+                        <div class="ring-fact">
+                            <h4>Zurich Airport International AG</h4>
+                            <p>
+                                Developed by Switzerland's globally respected airport
+                                infrastructure specialist.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ring-visual">
+                    <div class="inner">
+                        <div class="big">JEWAR</div>
+                        <div class="small">
+                            Commercial flight operations already underway, connecting
+                            Delhi‑NCR to the world
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONNECTIVITY -->
+    <section class="section-dark" style="padding-top: 70px">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Rail &amp; Road</div>
+                <h2>Connectivity that accelerates growth</h2>
+            </div>
+            <div class="job-grid" style="border-top: 1px solid var(--line)">
+                <div class="job-cell">
+                    <div class="n">72 Km</div>
+                    <div class="t">Regional Rapid Transit System (Proposed)</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">EPE</div>
+                    <div class="t">
+                        Eastern Peripheral Expressway — faster access to Delhi &amp;
+                        Meerut
+                    </div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">74+ Km</div>
+                    <div class="t">
+                        Link Expressway connecting Ganga &amp; Yamuna Expressways
+                        (Proposed)
+                    </div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">DFC</div>
+                    <div class="t">Dedicated Freight Corridor integration</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">Aqua Line</div>
+                    <div class="t">Noida Metro extension (Approved)</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">MMLP</div>
+                    <div class="t">
+                        Multimodal Logistics Park — proposed Boraki Railway Station
+                    </div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">Delhi–Varanasi</div>
+                    <div class="t">High-Speed Rail Corridor (Planned)</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">Service Lanes</div>
+                    <div class="t">
+                        Dedicated lanes planned toward the airport &amp; adjoining
+                        developments
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIAL ECOSYSTEM -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    The Corridor Rising
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    A multi-sector economic engine is taking shape
+                </h2>
+            </div>
+            <div class="chip-grid">
+                <div class="chip">Apparel &amp; Textile Park</div>
+                <div class="chip">Toy Manufacturing Cluster</div>
+                <div class="chip">Electronics &amp; Semiconductor Cluster</div>
+                <div class="chip">MSME Park</div>
+                <div class="chip">Logistics &amp; Warehousing Hubs</div>
+                <div class="chip">Multimodal Logistics Park</div>
+                <div class="chip">Educational &amp; Institutional Clusters</div>
+                <div class="chip">Data Center Park</div>
+                <div class="chip">International Film City</div>
+                <div class="chip">Medical Device Park</div>
+                <div class="chip">EV Charging Infrastructure Hub</div>
+                <div class="chip">Raya Urban Centre (Master Plan 2031)</div>
+                <div class="chip">Aerotropolis Development Zone</div>
+                <div class="chip">Olympic-Level Sports City</div>
+                <div class="chip">Renewable Energy Hubs</div>
+            </div>
+
+            <div style="margin-top: 60px">
+                <p style="
+              font-family: &quot;Marcellus&quot;, serif;
+              font-size: 18px;
+              color: var(--teal-deep);
+            ">
+                    3,113 industrial parks have been allotted in the YEIDA region —
+                    Apparel Park, Electronics &amp; Semiconductor Cluster, Renewable
+                    Energy Hubs, MSME Park, Toy Park, Fintech Hub, Medical Device Park,
+                    Logistics Hub, Olympic Park.
+                    <span style="opacity: 0.55; font-size: 13px">(As of January 2026, Source: Times of India)</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Latest Updates</div>
+                <h2>
+                    Multiple industrial clusters are driving the next wave of job
+                    creation
+                </h2>
+            </div>
+            <div class="job-grid">
+                <div class="job-cell">
+                    <div class="n">3,00,000</div>
+                    <div class="t">Jobs at Apparel Park</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">90,000</div>
+                    <div class="t">Jobs at Electronics &amp; Semiconductor Cluster</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">25,000</div>
+                    <div class="t">Jobs at Medical Devices Park</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">70,000</div>
+                    <div class="t">Other logistics &amp; distribution jobs</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">30,000</div>
+                    <div class="t">Jobs at Toy Park in the region</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">15,000</div>
+                    <div class="t">Jobs at Renewable Energy Hubs</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">18,000</div>
+                    <div class="t">Jobs at Automotive &amp; Tractor Hub</div>
+                </div>
+                <div class="job-cell">
+                    <div class="n">80,000</div>
+                    <div class="t">Jobs at MSME &amp; ODOP Industrial Units</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px">
+                <div class="eyebrow">Approx. 1,80,000 Jobs Generated</div>
+                <h3 style="color: var(--cream); font-size: 22px; margin-bottom: 22px">
+                    As industry giants invest in the region
+                </h3>
+                <div class="investor-list">
+                    <div class="investor">
+                        <b>Vivo Mobile India Pvt Ltd</b><span>Smartphone manufacturing hub, Sector 24/24A</span>
+                    </div>
+                    <div class="investor">
+                        <b>Integrated Batteries India</b><span>4 GW solar cell manufacturing unit, 25 acres</span>
+                    </div>
+                    <div class="investor">
+                        <b>Bikanervala Foods Pvt Ltd</b><span>Food processing &amp; snacks manufacturing unit</span>
+                    </div>
+                    <div class="investor">
+                        <b>Foxconn / HCL JV</b><span>€3,706 cr semiconductor facility, Sector 28</span>
+                    </div>
+                    <div class="investor">
+                        <b>Minda Corporation Ltd</b><span>Automotive wiring harness unit, Sector 10</span>
+                    </div>
+                    <div class="investor">
+                        <b>New Holland Agriculture</b><span>₹5,000 cr tractor manufacturing plant</span>
+                    </div>
+                    <div class="investor">
+                        <b>Polynomous Industries</b><span>Polymer compounds facility, Sector 10</span>
+                    </div>
+                    <div class="investor">
+                        <b>Escorts Kubota Limited</b><span>190 acres, ₹4,500 cr tractor &amp; equipment hub</span>
+                    </div>
+                    <div class="investor">
+                        <b>RPSG Group (Solar Hub)</b><span>3 GW solar ecosystem, Sector 8D</span>
+                    </div>
+                    <div class="investor">
+                        <b>Sonalika Tractors</b><span>Tractor manufacturing unit</span>
+                    </div>
+                    <div class="investor">
+                        <b>SAEL Solar P6 Pvt Ltd</b><span>8.5 GW solar cell &amp; module plant, 200 acres</span>
+                    </div>
+                    <div class="investor">
+                        <b>Patanjali</b><span>Land held for large Food &amp; Herbal Park</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAURS LEGACY -->
+    <section class="section-cream" id="gaurs">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    A Vision Ahead Of Its Time
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    Gaurs — a legacy of unrivalled luxury
+                </h2>
+                <p style="margin-top: 18px; color: var(--teal); opacity: 0.8">
+                    Gaur Yamuna City spans 101 hectares (250 acres) — an integrated
+                    township invested in when the region was still taking shape, built
+                    around tomorrow's infrastructure and opportunities. At Gaurs Group,
+                    we create homes where thoughtful design, enduring quality and
+                    refined living come together to enrich everyday life.
+                </p>
+            </div>
+            <div class="legacy-band">
+                <div class="legacy-cell">
+                    <div class="n">3</div>
+                    <div class="t">Decades of Commitment</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">75+</div>
+                    <div class="t">Delivered Projects</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">45,000+</div>
+                    <div class="t">Possessions Given (2014–2025)</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">75,000+</div>
+                    <div class="t">Units Delivered</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">3 Lakh+</div>
+                    <div class="t">Satisfied Customers</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">100 Mn+</div>
+                    <div class="t">Sq. Ft. Delivered</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">7</div>
+                    <div class="t">Business Verticals</div>
+                </div>
+                <div class="legacy-cell">
+                    <div class="n">1</div>
+                    <div class="t">Legacy of Trust</div>
+                </div>
+            </div>
+            <p style="
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--teal);
+            opacity: 0.65;
+          ">
+                Retail · Education · Hospitality · Energy · Sports · Finance · Media
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section class="section-cream-dim" id="project">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    Inspired By Nature's Most Magnificent Display
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    Designed to become a new benchmark
+                </h2>
+                <p style="margin-top: 16px; color: var(--teal); opacity: 0.8">
+                    The graceful spread of India's national bird, the peacock, inspires
+                    every aspect of Gaur Alaris — from the masterplan and landscape to
+                    the movement of pathways and open spaces. Flowing forms, layered
+                    greens and radiating experiences come together to create a
+                    destination where design isn't applied; it's experienced. Inspired
+                    by the enduring elegance of Art Deco architecture, Gaur Alaris is
+                    envisioned as a landmark where bold proportions, refined detailing
+                    and timeless design create an iconic identity.
+                </p>
+            </div>
+
+            <div class="spec-wrap">
+                <div class="spec-visual">
+                    <img src="assets/image.png" alt="Gaur Alaris, Phase 1 — Artist's Impression" style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+              " />
+                </div>
+                <ul class="spec-list">
+                    <li><span>Development Area</span><b>11.8 Acres</b></li>
+                    <li>
+                        <span>Configurations</span><b>
+                            <span class="gate-inline">
+                                <span class="gate-content">1550 &amp; 1950 Sq. Ft.</span>
+                                <span class="gate-pill" onclick="openGate()" style="
+                      position: absolute;
+                      inset: 0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "><span style="
+                        font-size: 11px;
+                        color: var(--teal-deep);
+                        background: rgba(246, 240, 226, 0.9);
+                        padding: 2px 8px;
+                        border-radius: 10px;
+                      ">🔒 Unlock</span></span>
+                            </span>
+                        </b>
+                    </li>
+                    <li><span>Towers (Phase 1)</span><b>8 Towers, 34 Storeys</b></li>
+                    <li><span>Architecture Style</span><b>Art Deco</b></li>
+                    <li><span>Landscape</span><b>8 Acres, Peacock-Inspired</b></li>
+                    <li>
+                        <span>Clubhouse</span><b>1,00,000 Sq. Ft. — Club Regalia</b>
+                    </li>
+                    <li><span>Location</span><b>Sector-22D, Yamuna Expressway</b></li>
+                    <li><span>RERA No.</span><b>UPRERAPRJ950965/07/2026</b></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN TEAM -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    Shaped By Globally Respected Design Expertise
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    A collaborative vision, expertly assembled
+                </h2>
+            </div>
+            <div class="chip-grid" style="grid-template-columns: repeat(2, 1fr)">
+                <div class="chip">Project Architect — Hafeez Contractor</div>
+                <div class="chip">Club &amp; Interior Architect — OchreInk</div>
+                <div class="chip">
+                    Landscape Architect — SCI (Site Concepts International), Singapore
+                </div>
+                <div class="chip">Structural Consultant — R D Consultant</div>
+                <div class="chip">MEP Consultant — Paradise Consultant</div>
+                <div class="chip">
+                    Clubhouse Interior Designer — Mona Arora, Studio Designscape
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION DIALS -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-head center" style="margin: 0 auto 20px">
+                <div class="eyebrow">Where Plans Of A Feather Come Together</div>
+                <h2>Some locations offer convenience. Others create advantage.</h2>
+            </div>
+            <div class="dial-wrap">
+                <div class="dial-grid">
+                    <div class="dial">
+                        <div class="km">3 Km</div>
+                        <div class="lbl2">World's Tallest Lord Shri Krishna Murti</div>
+                    </div>
+                    <div class="dial">
+                        <div class="km">3 Km</div>
+                        <div class="lbl2">Gaurs International School</div>
+                    </div>
+                    <div class="dial">
+                        <div class="km">3 Km</div>
+                        <div class="lbl2">Upcoming Mall, Gaur Yamuna City</div>
+                    </div>
+                    <div class="dial">
+                        <div class="km">10 Km</div>
+                        <div class="lbl2">Eastern Peripheral Expressway</div>
+                    </div>
+                    <div class="dial">
+                        <div class="km">16 Km</div>
+                        <div class="lbl2">Noida International Airport (Jewar)</div>
+                    </div>
+                    <div class="dial">
+                        <div class="km">18 Km</div>
+                        <div class="lbl2">Noida–Greater Noida Expressway</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section class="section-cream" id="amenities">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    Club Regalia — 1,00,000 Sq. Ft. Of Grandeur
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    One club. Five distinct experiences.
+                </h2>
+                <p style="margin-top: 16px; color: var(--teal); opacity: 0.8">
+                    Across five levels and five distinct zones, Club Regalia transforms
+                    everyday leisure into a journey of discovery, connection and
+                    wellbeing. One of the Yamuna Expressway's largest clubhouses,
+                    designed for every generation.
+                </p>
+            </div>
+
+            <div class="zone-tabs" role="tablist">
+                <div class="zone-tab active" data-zone="aqua">Aqua Zone</div>
+                <div class="zone-tab" data-zone="serenity">Serenity Zone</div>
+                <div class="zone-tab" data-zone="sports">Sports Zone</div>
+                <div class="zone-tab" data-zone="wellness">Wellness Zone</div>
+                <div class="zone-tab" data-zone="entertainment">
+                    Entertainment Zone
+                </div>
+                <div class="zone-tab" data-zone="social">Social Zone</div>
+                <div class="zone-tab" data-zone="terrace">Terrace Amenity</div>
+            </div>
+
+            <div class="zone-panels">
+                <div class="zone-panel active" id="aqua">
+                    <div>
+                        <h3>Aqua Zone</h3>
+                        <ul>
+                            <li>Splash Pad Kids Pool</li>
+                            <li>Jacuzzi Bubble Pool</li>
+                            <li>Leisure Pool</li>
+                            <li>Pool Promenade Plaza</li>
+                            <li>Lazy Pool</li>
+                            <li>Lap Pool</li>
+                            <li>Pool Deck</li>
+                            <li>Pool Feather Pavilion</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <circle cx="200" cy="160" r="120" />
+                                <circle cx="200" cy="160" r="80" />
+                                <circle cx="200" cy="160" r="40" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="serenity">
+                    <div>
+                        <h3>Serenity Zone</h3>
+                        <ul>
+                            <li>Butterfly Garden</li>
+                            <li>Lotus Garden</li>
+                            <li>Plumeria Garden</li>
+                            <li>Lily Garden</li>
+                            <li>Flower Garden</li>
+                            <li>Monsoon Bloom Garden</li>
+                            <li>Bio Swale Garden</li>
+                            <li>Nest Pavilion Garden</li>
+                            <li>Focal Promenade Plaza</li>
+                            <li>Monsoon Dance Deck</li>
+                            <li>Cloud Mist Walk</li>
+                            <li>Feather Awakening Plaza</li>
+                            <li>Meditation Walk</li>
+                            <li>Senior Citizens Walk</li>
+                            <li>Nature Trail</li>
+                            <li>Silent Groove Trail</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <path d="M40 260 Q200 60 360 260" />
+                                <path d="M40 220 Q200 20 360 220" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="sports">
+                    <div>
+                        <h3>Sports Zone</h3>
+                        <ul>
+                            <li>Multi-purpose Play Court</li>
+                            <li>Cricket Pitch</li>
+                            <li>Rainbow Play Court</li>
+                            <li>Fitness Station</li>
+                            <li>Jogging Track</li>
+                            <li>Skating Rink</li>
+                            <li>Pickleball Court</li>
+                            <li>Family Picnic Lawn</li>
+                            <li>2 Badminton Courts</li>
+                            <li>2 Squash Courts</li>
+                            <li>Smash Cricket</li>
+                            <li>Viewing Gallery</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <rect x="60" y="60" width="280" height="200" />
+                                <line x1="200" y1="60" x2="200" y2="260" />
+                                <circle cx="200" cy="160" r="40" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="wellness">
+                    <div>
+                        <h3>Wellness Zone</h3>
+                        <ul>
+                            <li>Heated Pool</li>
+                            <li>Ice / Cold Bath</li>
+                            <li>Male &amp; Female Wellness Lounge (Spa)</li>
+                            <li>Salon</li>
+                            <li>Gymnasium, Kicking &amp; Boxing Room</li>
+                            <li>Yoga / Aerobics / Zumba / Pilates Room</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <path d="M100 100 Q200 40 300 100 Q260 220 200 260 Q140 220 100 100Z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="entertainment">
+                    <div>
+                        <h3>Entertainment Zone</h3>
+                        <ul>
+                            <li>Arcade Junction</li>
+                            <li>Bowling Alley</li>
+                            <li>Air Hockey</li>
+                            <li>Foosball Table</li>
+                            <li>Basketball Table</li>
+                            <li>Virtual Game Simulator</li>
+                            <li>Karaoke Room</li>
+                            <li>Billiards Room</li>
+                            <li>Card Room</li>
+                            <li>Carrom Room</li>
+                            <li>Mini Theater</li>
+                            <li>Music Room</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <rect x="70" y="70" width="100" height="70" />
+                                <rect x="230" y="70" width="100" height="70" />
+                                <rect x="70" y="180" width="100" height="70" />
+                                <rect x="230" y="180" width="100" height="70" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="social">
+                    <div>
+                        <h3>Social Zone</h3>
+                        <ul>
+                            <li>Banquet Hall</li>
+                            <li>Pre-function Area</li>
+                            <li>Banquet Spill-over Lawn</li>
+                            <li>Party Hall</li>
+                            <li>Restaurant</li>
+                            <li>Creche</li>
+                            <li>Business Centre (Work Station)</li>
+                            <li>Celebration Activity Lawn</li>
+                            <li>Barbecue Pavilion</li>
+                            <li>Rain Amphitheater</li>
+                            <li>Senior Citizens Pavilion</li>
+                            <li>Pet Park</li>
+                            <li>Prayer Hall</li>
+                            <li>Paved Activity Plaza</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <ellipse cx="200" cy="160" rx="140" ry="90" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="zone-panel" id="terrace">
+                    <div>
+                        <h3>Terrace Amenity Zone</h3>
+                        <ul>
+                            <li>Sky Veranda</li>
+                            <li>Sky Breeze Pavilion</li>
+                            <li>Horizon Viewing Deck</li>
+                            <li>Terrace Lawn</li>
+                        </ul>
+                    </div>
+                    <div class="zone-visual">
+                        <svg viewBox="0 0 400 320">
+                            <g stroke="#c9a24a" fill="none" stroke-width="1" opacity="0.6">
+                                <path d="M60 260 L340 260" />
+                                <path d="M200 260 L200 60" />
+                                <path d="M100 260 Q200 100 300 260" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTER PLAN -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Site Master Plan</div>
+                <h2>Two landscapes. One rare view.</h2>
+            </div>
+            <div class="plan-note">
+                At Gaur Alaris, select residences enjoy the privilege of looking upon
+                two signature landscapes, creating an everyday experience that's as
+                rare as it is breathtaking — with 8 towers set around a
+                peacock-inspired central water feature and layered gardens.
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section-cream" id="pricing">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow" style="color: var(--teal-light)">
+                    Price List &amp; Payment Plan
+                </div>
+                <h2 style="color: var(--teal-deep)">
+                    Transparent pricing, structured payments
+                </h2>
+            </div>
+
+            <div class="gate-wrap">
+                <div class="gate-overlay">
+                    <div class="lock">🔒</div>
+                    <p>
+                        Full pricing, floor-wise PLC and the complete payment schedule are
+                        available after a quick registration.
+                    </p>
+                    <button class="btn btn-solid" onclick="openGate()">
+                        Unlock Price List
+                    </button>
+                </div>
+                <div class="price-wrap gate-content">
+                    <div>
+                        <div class="bsp-banner">
+                            <div>
+                                <div class="l">Basic Sales Price</div>
+                                <div class="v">₹8,499 / Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Floor</th>
+                                    <th>PLC (INR / Sq. Ft.)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st – 5th</td>
+                                    <td>750</td>
+                                </tr>
+                                <tr>
+                                    <td>6th – 10th</td>
+                                    <td>700</td>
+                                </tr>
+                                <tr>
+                                    <td>11th – 15th</td>
+                                    <td>600</td>
+                                </tr>
+                                <tr>
+                                    <td>16th – 20th</td>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <td>21st – 25th</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td>26th – 30th</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>31st – 33rd</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Top Floor</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="price-table" style="margin-top: 20px">
+                            <thead>
+                                <tr>
+                                    <th>View / Position PLC</th>
+                                    <th>INR / Sq. Ft.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Landscape</td>
+                                    <td>225</td>
+                                </tr>
+                                <tr>
+                                    <td>Park Facing</td>
+                                    <td>225</td>
+                                </tr>
+                                <tr>
+                                    <td>45 Mtr. Road</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td>Corner PLC</td>
+                                    <td>150</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="charges-list">
+                            <div class="row">
+                                <span>Car Parking (Two)</span><b>₹7,00,000</b>
+                            </div>
+                            <div class="row">
+                                <span>Club Membership</span><b>₹4,45,000</b>
+                            </div>
+                            <div class="row">
+                                <span>Electricity Infra Charges</span><b>₹1,25,000</b>
+                            </div>
+                            <div class="row"><span>Power Backup</span><b>₹1,00,000</b></div>
+                            <div class="row"><span>IFMS</span><b>₹50 / Sq. Ft.</b></div>
+                            <div class="row">
+                                <span>Maintenance</span><b>₹3.75 / Sq. Ft. + GST</b>
+                            </div>
+                        </div>
+                        <p class="disclaimer">
+                            Disclaimer: GST as applicable. The above-mentioned prices are at
+                            the sole discretion of management and can be changed at any
+                            time. ECPA is allocated along with a particular apartment and
+                            will be calculated @ ₹3,999 per Sq. Ft. 1 year advance
+                            maintenance to be payable at the time of possession.
+                        </p>
+                    </div>
+
+                    <div class="payment-plan">
+                        <h3 style="
+                  color: var(--gold-bright);
+                  font-size: 18px;
+                  margin-bottom: 20px;
+                ">
+                            Construction Linked Plan (CLP)
+                        </h3>
+                        <div class="row"><span>On Booking</span><b>10%</b></div>
+                        <div class="row">
+                            <span>Within 45 Days from Booking</span><b>10%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Start of Excavation</span><b>5%</b>
+                        </div>
+                        <div class="row"><span>On Start of Rafting</span><b>5%</b></div>
+                        <div class="row"><span>On Start of Basement</span><b>5%</b></div>
+                        <div class="row">
+                            <span>On Completion of Ground Floor</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 2nd Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 6th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 10th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 14th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 18th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 22nd Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 26th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of 30th Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Casting of Top Floor Slab</span><b>5%</b>
+                        </div>
+                        <div class="row">
+                            <span>On Completion of Exterior Plaster / Primer</span><b>5%</b>
+                        </div>
+                        <div class="row" style="border-bottom: none">
+                            <span>On Offer of Possession</span><b>10%</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="eyebrow" style="justify-content: center">
+                Life Spreads Its Wings
+            </div>
+            <h2>Ready to see Gaur Alaris for yourself?</h2>
+            <p>
+                Share your details and our team will get in touch with the price list,
+                floor plans and a site visit slot at your convenience.
+            </p>
+            <a href="#enquire" class="btn btn-solid">Register Interest Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="foot-grid">
+                <div class="col">
+                    <b>Gaur Alaris</b>
+                    <p>Sector-22D, Yamuna Expressway</p>
+                    <p>By Gaursons India Pvt Ltd</p>
+                </div>
+                <div class="col">
+                    <b>RERA Details</b>
+                    <p>RERA No.: UPRERAPRJ950965/07/2026</p>
+                    <p>up-rera.in/projects</p>
+                </div>
+                <div class="col">
+                    <b>Collection Account</b>
+                    <p>
+                        A/C: Gaursons India Pvt Ltd Collection A/C - Gaur Alaris (Phase 1)
+                    </p>
+                    <p>Project Collection A/C No.: 57500000194413O</p>
+                    <p>Bank: HDFC Bank Limited · IFSC: HDFC0002649</p>
+                    <p>
+                        Branch: C/25, Stellar IT Park, Sector-62, Greater Noida, UP,
+                        201306
+                    </p>
+                </div>
+                <div class="col">
+                    <b>Launch Date</b>
+                    <p>29-07-2026</p>
+                </div>
+            </div>
+            <p style="opacity: 0.6">
+                Disclaimer: Images used across this site are artist's impressions /
+                for illustrative purposes only and do not represent an actual likeness
+                of the project. Phase 2 is proposed to be developed at a later stage.
+                The actual development may vary. Nothing on this page constitutes a
+                binding offer; all details are subject to the terms of the Agreement
+                for Sale and applicable RERA disclosures.
+            </p>
+        </div>
+    </footer>
+
+    <!-- UNLOCK MODAL -->
+    <div class="modal-backdrop" id="gateModal">
+        <div class="modal-card">
+            <button class="modal-close" aria-label="Close" onclick="closeGate()">
+                ✕
+            </button>
+            <div id="gateFormWrap">
+                <div class="eyebrow">Unlock Full Details</div>
+                <h3>See exact pricing &amp; sizing</h3>
+                <div class="sub">
+                    Fill in your details once to view the full price list, floor-wise
+                    PLC and unit sizes for Gaur Alaris.
+                </div>
+                <form id="gateForm">
+                    <div class="field">
+                        <label for="gname">Full Name</label>
+                        <input type="text" id="gname" placeholder="Your name" required />
+                    </div>
+                    <div class="field">
+                        <label for="gphone">Phone Number</label>
+                        <input type="tel" id="gphone" placeholder="+91 98765 43210" required />
+                    </div>
+                    <div class="field">
+                        <label for="gemail">Email Address</label>
+                        <input type="email" id="gemail" placeholder="you@example.com" required />
+                    </div>
+                    <button type="submit" class="btn btn-solid" style="width: 100%">
+                        Unlock Pricing &amp; Sizing
+                    </button>
+                    <div class="lead-fine">
+                        RERA No. UPRERAPRJ950965/07/2026 · By submitting you agree to be
+                        contacted by our sales team.
+                    </div>
+                </form>
+            </div>
+            <div class="modal-thanks" id="gateThanks">
+                <div class="check">✓</div>
+                <h3>Unlocked.</h3>
+                <p style="font-size: 14px; color: var(--teal)">
+                    Thank you — you can now view full pricing and sizing details across
+                    the page.
+                </p>
+                <button class="btn btn-outline" style="margin-top: 10px" onclick="closeGate()">
+                    Continue Browsing
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-cta">
+        <span>Gaur Alaris · ₹8,499/sq.ft onwards</span>
+        <a href="#enquire" class="btn btn-solid" style="padding: 10px 18px">Enquire</a>
+    </div>
+
+    <script>
+        // Tabs for amenity zones
+        document.querySelectorAll(".zone-tab").forEach((tab) => {
+            tab.addEventListener("click", () => {
+                document
+                    .querySelectorAll(".zone-tab")
+                    .forEach((t) => t.classList.remove("active"));
+                document
+                    .querySelectorAll(".zone-panel")
+                    .forEach((p) => p.classList.remove("active"));
+                tab.classList.add("active");
+                document.getElementById(tab.dataset.zone).classList.add("active");
+            });
+        });
+
+        // Lead form submit — submits to Google Sheets then downloads brochure PDF
+        // Auto-detect backend URL
+        // file:// → hostname is "", localhost dev → "localhost", production → domain
+        const _h = window.location.hostname;
+        const API_BASE =
+            !_h || _h === "localhost" || _h === "127.0.0.1"
+                ? "http://localhost:3001"
+                : "https://centurion.gaursonprojects.in";
+
+        function downloadBrochure() {
+            const a = document.createElement("a");
+            a.href = "assets/gaur alaris sales.pdf";
+            a.download = "Gaur Alaris Brochure.pdf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        const form = document.getElementById("enquiryForm");
+        const submitBtn = form.querySelector('button[type="submit"]');
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Submitting…";
+            submitBtn.disabled = true;
+            const payload = {
+                name: document.getElementById("fname").value,
+                phone: document.getElementById("fphone").value,
+                email: document.getElementById("femail").value,
+                details: document.getElementById("fconfig").value,
+                formType: "enquiry",
+                timestamp: new Date().toISOString(),
+                source: "Gaur Alaris Landing Page",
+            };
+            try {
+                const res = await fetch(API_BASE + "/api/submit-form", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                });
+                if (!res.ok) throw new Error("Server error");
+                document.getElementById("leadForm").classList.add("hide");
+                document.getElementById("leadThanks").classList.add("show");
+                downloadBrochure();
+            } catch (err) {
+                console.error("Form submission error:", err);
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                alert("Something went wrong. Please try again.");
+            }
+        });
+
+        // Unlock gate — pricing & sizing
+        function openGate() {
+            document.getElementById("gateModal").classList.add("open");
+        }
+        function closeGate() {
+            document.getElementById("gateModal").classList.remove("open");
+        }
+        document
+            .getElementById("gateModal")
+            .addEventListener("click", function (e) {
+                if (e.target === this) closeGate();
+            });
+        const gateForm = document.getElementById("gateForm");
+        const gateBtn = gateForm.querySelector('button[type="submit"]');
+        gateForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const originalText = gateBtn.textContent;
+            gateBtn.textContent = "Unlocking…";
+            gateBtn.disabled = true;
+            const payload = {
+                name: document.getElementById("gname").value,
+                phone: document.getElementById("gphone").value,
+                email: document.getElementById("gemail").value,
+                formType: "pricing-gate",
+                timestamp: new Date().toISOString(),
+                source: "Gaur Alaris — Pricing Unlock Gate",
+            };
+            try {
+                const res = await fetch(API_BASE + "/api/submit-form", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                });
+                if (!res.ok) throw new Error("Server error");
+                document.body.classList.add("unlocked");
+                document.getElementById("gateFormWrap").style.display = "none";
+                document.getElementById("gateThanks").classList.add("show");
+                downloadBrochure();
+            } catch (err) {
+                console.error("Gate form error:", err);
+                gateBtn.textContent = originalText;
+                gateBtn.disabled = false;
+                alert("Something went wrong. Please try again.");
+            }
+        });
+    </script>
 </body>
 
 </html>

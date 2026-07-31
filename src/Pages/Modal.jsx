@@ -65,7 +65,7 @@ const Modal = ({ isOpen, onClose, type }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     // Clear global error when user types to improve UX
     if (error) setError("");
 
@@ -121,7 +121,7 @@ const Modal = ({ isOpen, onClose, type }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Run all validations
     const validationError = validateForm();
     if (validationError) {
@@ -134,7 +134,7 @@ const Modal = ({ isOpen, onClose, type }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/submit-form",
+        "https://alaris-backend.vercel.app/api/submit-form",
         {
           method: "POST",
           headers: {
@@ -153,7 +153,7 @@ const Modal = ({ isOpen, onClose, type }) => {
 
       if (response.ok) {
         setIsSubmitted(true);
-        
+
         setTimeout(() => {
           downloadPDF();
         }, 1000);
@@ -226,8 +226,8 @@ const Modal = ({ isOpen, onClose, type }) => {
                           {isSubmitted
                             ? "Thank You!"
                             : type === "brochure"
-                            ? "Download Brochure"
-                            : "Get More Details"}
+                              ? "Download Brochure"
+                              : "Get More Details"}
                         </h3>
                         <p className="text-amber-300 text-xs sm:text-sm mt-0.5 truncate">
                           {isSubmitted

@@ -13,7 +13,7 @@ const BookingForm = ({ title = "Get in Touch" }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  
+
 
   const downloadPDF = () => {
     const link = document.createElement("a");
@@ -26,12 +26,12 @@ const BookingForm = ({ title = "Get in Touch" }) => {
   };
 
   useEffect(() => {
-  const handleBack = () => {
-    setIsSubmitted(false);
-  };
-  window.addEventListener("popstate", handleBack);
-  return () => window.removeEventListener("popstate", handleBack);
-}, []);
+    const handleBack = () => {
+      setIsSubmitted(false);
+    };
+    window.addEventListener("popstate", handleBack);
+    return () => window.removeEventListener("popstate", handleBack);
+  }, []);
 
 
   const handleSubmit = async (e) => {
@@ -42,10 +42,11 @@ const BookingForm = ({ title = "Get in Touch" }) => {
     try {
       // Send data to backend
       const response = await fetch(
-        "http://localhost:5000/api/submit-form",
+        "https://alaris-backend.vercel.app/api/submit-form",
         {
           method: "POST",
           headers: {
+            i
             "Content-Type": "application/json",
           },
           body: JSON.stringify({

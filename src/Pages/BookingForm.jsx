@@ -46,7 +46,7 @@ const BookingForm = ({ title = "Get in Touch" }) => {
         {
           method: "POST",
           headers: {
-            i
+
             "Content-Type": "application/json",
           },
           body: JSON.stringify({

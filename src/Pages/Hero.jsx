@@ -40,8 +40,8 @@ const Hero = ({ openModal }) => {
             </motion.div>
 
             <h1 className="text-xl md:text-4xl font-semibold mb-6 leading-tight">
-              Gaur Alaris (Phase 1)
-            
+              Gaur Alaris
+
             </h1>
 
             <h2 className="text-xl md:text-3xl font-light mb-8 text-gray-200">
@@ -59,7 +59,7 @@ const Hero = ({ openModal }) => {
                   <p className="text-lg font-semibold">3 & 4 BHK</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
                   <MdSquareFoot className="text-2xl text-amber-400" />
@@ -82,7 +82,7 @@ const Hero = ({ openModal }) => {
                 <span>Download Brochure</span>
                 <FiDownload />
               </motion.button>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

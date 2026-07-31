@@ -16,10 +16,11 @@ const BookingForm = ({ title = "Get in Touch" }) => {
 
 
   const downloadPDF = () => {
+    const pdfUrl = "/Gaur Alaris Sales Deck_compressed.pdf";
+
     const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1LCPxo3irMesU7ul3XbamzJqfD708KqiI";
-    link.download = "Gaur-Brochure.pdf";
+    link.href = pdfUrl;
+    link.download = "Gaur-Alaris-Brochure.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

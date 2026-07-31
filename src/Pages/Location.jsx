@@ -54,19 +54,13 @@ const Location = () => {
             className="relative"
           >
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-              {/* Map Placeholder */}
-              <div className="relative h-96 bg-gradient-to-br from-gray-100 to-gray-200">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center w-full h-full">
-                    <img src={optimizeCloudinary("https://res.cloudinary.com/djvps0arr/image/upload/v1785493188/eb302aae-14da-43a6-8f88-9f0af94ed2b9.png")} alt="location" className='h-full w-full object-cover' />
-                  </div>
-                </div>
-                
-                {/* Location Markers */}
-                <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-red-500 rounded-full animate-pulse" />
-                <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-blue-500 rounded-full animate-pulse" />
-                <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-green-500 rounded-full animate-pulse" />
-                <div className="absolute bottom-1/3 right-1/4 w-4 h-4 bg-purple-500 rounded-full animate-pulse" />
+              {/* Map Image — full width, no crop */}
+              <div className="relative w-full bg-amber-50">
+                <img
+                  src={optimizeCloudinary("https://res.cloudinary.com/djvps0arr/image/upload/v1785493188/eb302aae-14da-43a6-8f88-9f0af94ed2b9.png")}
+                  alt="Gaur Alaris Location Map"
+                  className="w-full h-auto object-contain"
+                />
               </div>
               
               <div className="p-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">

@@ -92,14 +92,14 @@ const Hero = ({ openModal }) => {
             { label: 'RERA No.', value: 'UPRERAPRJ950965/07/2026' },
             { label: 'Towers', value: '8 Towers (34 Storey)' },
             { label: 'Architecture', value: 'Art Deco' },
-            { label: 'Clubhouse', value: '1,00,000 sq.ft. Club Regalia' },
+            { label: 'Clubhouse', value: 'Club Regalia — 1,00,000 sq.ft.' },
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-gray-500/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-center hover:bg-white/15 transition-all"
+              className="bg-gray-500/60 backdrop-blur-md border border-white/40 rounded-2xl p-4 text-center hover:bg-white/15 transition-all flex flex-col justify-center min-h-[90px]"
             >
-              <p className="text-sm text-gray-300 mb-2">{item.label}</p>
-              <p className="text-base font-bold text-white">{item.value}</p>
+              <p className="text-xs text-gray-300 mb-1 uppercase tracking-wide">{item.label}</p>
+              <p className="text-sm font-bold text-white leading-tight break-words">{item.value}</p>
             </div>
           ))}
         </motion.div>

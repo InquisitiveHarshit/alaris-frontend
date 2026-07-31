@@ -10,23 +10,38 @@ const PriceList = ({ openModal }) => {
   const [isUnlocking, setIsUnlocking] = useState(false);
   const [unlockDone, setUnlockDone] = useState(false);
 
+  const downloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = '/Gaur Alaris Sales Deck_compressed.pdf';
+    link.download = 'Gaur-Alaris-Brochure.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleUnlockSubmit = async (e) => {
     e.preventDefault();
     setIsUnlocking(true);
     try {
-      await fetch('http://localhost:5000/api/submit-form', {
+      await fetch('https://alaris-backend.vercel.app/api/submit-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...unlockForm, formType: 'pricing-unlock', source: 'pricing-gate' })
+        body: JSON.stringify({ ...unlockForm, formType: 'pricing-unlock', source: 'pricing-gate', timestamp: new Date().toISOString() })
       });
-    } catch (_) {}
+    } catch (_) { }
+    // Same behaviour as main brochure form: show success, download PDF, push thankyou URL
     setUnlockDone(true);
+    window.history.pushState({}, '', '/thankyou');
+    setTimeout(() => {
+      downloadPDF();
+    }, 800);
     setTimeout(() => {
       setIsUnlocked(true);
       setShowGateModal(false);
       setUnlockDone(false);
       setIsUnlocking(false);
-    }, 1500);
+      window.history.pushState({}, '', '/');
+    }, 2000);
   };
   const plans = [
     {
@@ -92,11 +107,10 @@ const PriceList = ({ openModal }) => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className={`relative rounded-2xl overflow-hidden cursor-pointer ${
-                plan.popular 
-                  ? 'shadow-2xl transform scale-105' 
+              className={`relative rounded-2xl overflow-hidden cursor-pointer ${plan.popular
+                  ? 'shadow-2xl transform scale-105'
                   : 'shadow-xl'
-              }`}
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -108,11 +122,10 @@ const PriceList = ({ openModal }) => {
                 </div>
               )}
 
-              <div className={`relative p-8 ${
-                plan.popular 
+              <div className={`relative p-8 ${plan.popular
                   ? 'bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200'
                   : 'bg-white border border-gray-100'
-              }`}>
+                }`}>
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="flex items-center justify-center space-x-2 mb-4">
@@ -121,7 +134,7 @@ const PriceList = ({ openModal }) => {
                       {plan.type}
                     </h3>
                   </div>
-                  
+
                   <div className="flex items-center justify-center space-x-2 text-gray-600 mb-6">
                     <MdSquareFoot className="text-xl" />
                     <span className="text-lg font-medium">{plan.size}</span>
@@ -139,11 +152,10 @@ const PriceList = ({ openModal }) => {
                 <div className="space-y-4 mb-8">
                   {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
-                      <div className={`w-6 h-6 rounded-full flex items-center justify-center mt-1 ${
-                        plan.popular
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center mt-1 ${plan.popular
                           ? 'bg-amber-100 text-amber-600'
                           : 'bg-gray-100 text-gray-600'
-                      }`}>
+                        }`}>
                         <FiCheck className="text-sm" />
                       </div>
                       <span className="text-gray-700">{feature}</span>
@@ -178,11 +190,10 @@ const PriceList = ({ openModal }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => openModal('price-breakup')}
-                  className={`w-full py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all ${
-                    plan.popular
+                  className={`w-full py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all ${plan.popular
                       ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:shadow-xl'
                       : 'bg-gray-900 text-white hover:bg-gray-800'
-                  }`}
+                    }`}
                 >
                   <span>View Price Breakup</span>
                   <FiChevronRight />
@@ -228,7 +239,7 @@ const PriceList = ({ openModal }) => {
               <h3 className="text-2xl font-bold">Detailed Pricing Breakdown</h3>
               <p className="text-amber-100 mt-1">Basic Sales Price: ₹8,499 per sq.ft.</p>
             </div>
-            
+
             <div className="p-6 md:p-8 space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
                 {/* PLC by Floor */}
@@ -257,10 +268,10 @@ const PriceList = ({ openModal }) => {
                       PLC by View (₹/sq.ft.)
                     </h4>
                     <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
-                      <div className="bg-gray-50 p-3 rounded-lg text-center">Landscape<br/><span className="font-bold text-gray-900">225</span></div>
-                      <div className="bg-gray-50 p-3 rounded-lg text-center">Park Facing<br/><span className="font-bold text-gray-900">225</span></div>
-                      <div className="bg-gray-50 p-3 rounded-lg text-center">45 Mtr Road<br/><span className="font-bold text-gray-900">400</span></div>
-                      <div className="bg-gray-50 p-3 rounded-lg text-center">Corner<br/><span className="font-bold text-gray-900">150</span></div>
+                      <div className="bg-gray-50 p-3 rounded-lg text-center">Landscape<br /><span className="font-bold text-gray-900">225</span></div>
+                      <div className="bg-gray-50 p-3 rounded-lg text-center">Park Facing<br /><span className="font-bold text-gray-900">225</span></div>
+                      <div className="bg-gray-50 p-3 rounded-lg text-center">45 Mtr Road<br /><span className="font-bold text-gray-900">400</span></div>
+                      <div className="bg-gray-50 p-3 rounded-lg text-center">Corner<br /><span className="font-bold text-gray-900">150</span></div>
                     </div>
                   </div>
 
@@ -288,7 +299,7 @@ const PriceList = ({ openModal }) => {
                 <div className="hidden md:block w-px h-8 bg-amber-200"></div>
                 <div className="flex-1 text-center">
                   <span className="text-amber-800 font-semibold block mb-1">Maintenance</span>
-                  <span className="text-gray-700">₹3.75/sq.ft. + GST<br/><span className="text-xs text-gray-500">(1 yr advance payable at possession)</span></span>
+                  <span className="text-gray-700">₹3.75/sq.ft. + GST<br /><span className="text-xs text-gray-500">(1 yr advance payable at possession)</span></span>
                 </div>
               </div>
 
@@ -360,7 +371,7 @@ const PriceList = ({ openModal }) => {
                           type="tel"
                           required
                           value={unlockForm.phone}
-                          onChange={e => setUnlockForm(p => ({ ...p, phone: e.target.value.replace(/\D/g,'').slice(0,10) }))}
+                          onChange={e => setUnlockForm(p => ({ ...p, phone: e.target.value.replace(/\D/g, '').slice(0, 10) }))}
                           placeholder="10-digit mobile number"
                           className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
                         />

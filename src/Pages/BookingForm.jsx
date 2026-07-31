@@ -43,7 +43,7 @@ const BookingForm = ({ title = "Get in Touch" }) => {
     try {
       // Send data to backend
       const response = await fetch(
-        "http://localhost:5000/api/submit-form",
+        "https://alaris-backend.vercel.app/api/submit-form",
         {
           method: "POST",
           headers: {

@@ -12,7 +12,7 @@ const FloorPlan = ({ openModal }) => {
   const floorPlans = {
     '3bhk': {
       title: "3 BHK Apartment",
-      size: "1910 sq.ft.",
+      size: "1550 sq.ft.",
       image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764659898/3bhk_ftu9af.jpg",
       rooms: [
         { type: "Bedroom", count: 3, icon: <MdKingBed /> },
@@ -31,7 +31,7 @@ const FloorPlan = ({ openModal }) => {
     },
     '4bhk': {
       title: "4 BHK Apartment",
-      size: "2495 sq.ft.",
+      size: "1950 sq.ft.",
       image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764659890/4bhk_czg249.jpg",
       rooms: [
         { type: "Bedroom", count: 4, icon: <MdKingBed /> },
@@ -243,8 +243,14 @@ const FloorPlan = ({ openModal }) => {
         >
           <div className="p-8 text-white text-center">
             <h3 className="text-3xl font-bold mb-4">Site Master Plan</h3>
-            <p className="text-amber-100 mb-8 max-w-2xl mx-auto">
-              Explore the complete layout of our 12-acre gated community with all amenities
+            <p className="text-amber-100 mb-2 max-w-3xl mx-auto">
+              Explore the complete layout of our 11.8-acre gated community featuring 8 Premium Towers:
+            </p>
+            <p className="text-white font-medium mb-2">
+              Eleganza, Evania, Gaudium, Elance, Azura, Orlena, Elara, Aurea (Wings A/B/C/D)
+            </p>
+            <p className="text-amber-200 text-sm mb-8">
+              Centering around the magnificent Club Regalia
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

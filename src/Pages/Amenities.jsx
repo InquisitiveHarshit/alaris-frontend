@@ -1,112 +1,103 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiWifi, FiDroplet, FiWind, FiRadio, FiTv, FiSun } from 'react-icons/fi';
-import { GiGymBag, GiTennisCourt, GiBasketballBall, GiPartyPopper } from 'react-icons/gi';
-import { MdSportsTennis, MdLocalParking, MdSecurity } from 'react-icons/md';
-import { PiSecurityCamera } from "react-icons/pi";
-import { optimizeCloudinary } from '../utils/cloudianry';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FaSwimmingPool, FaLeaf, FaTableTennis, FaSpa, FaGamepad, FaUsers, FaGlassCheers, FaBuilding } from 'react-icons/fa';
+import { MdSportsCricket } from 'react-icons/md';
 
 const Amenities = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeZone, setActiveZone] = useState('Aqua Zone');
 
-  const amenitiesCategories = [
-    { id: 'all', name: 'All Amenities' },
-    { id: 'sports', name: 'Sports' },
-    { id: 'leisure', name: 'Leisure' },
-    { id: 'fitness', name: 'Fitness' },
-    { id: 'security', name: 'Security' },
-  ];
-
-  const amenities = [
+  const zones = [
     {
-      id: 1,
-      title: "Swimming Pool",
-      category: "leisure",
-      icon: <GiTennisCourt className="text-4xl" />,
-      image: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=800",
-      description: "Olympic-size swimming pool with separate kids pool"
+      id: 'Aqua Zone',
+      icon: <FaSwimmingPool className="text-3xl" />,
+      title: 'Aqua Zone',
+      items: [
+        'Splash Pad Kids Pool', 'Jacuzzi Bubble Pool', 'Leisure Pool',
+        'Pool Promenade Plaza', 'Lazy Pool', 'Lap Pool', 'Pool Deck', 'Pool Feather Pavilion'
+      ]
     },
     {
-      id: 2,
-      title: "Gymnasium",
-      category: "fitness",
-      icon: <GiGymBag className="text-4xl" />,
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800",
-      description: "State-of-the-art gym with modern equipment"
+      id: 'Serenity Zone',
+      icon: <FaLeaf className="text-3xl" />,
+      title: 'Serenity Zone',
+      items: [
+        'Butterfly / Lotus / Plumeria / Lily / Flower / Monsoon Bloom / Bio Swale Gardens',
+        'Nest Pavilion Garden', 'Focal Promenade Plaza', 'Monsoon Dance Deck',
+        'Monsoon Pavilions', 'Cloud Mist Walk', 'Feather Awakening Plaza',
+        'Meditation Walk', 'Senior Citizens Walk', 'Connecting Walkways',
+        'Feather Trail Promenade', 'Nature Trail', 'Silent Groove Trail',
+        'Nimbus Deck Plaza', 'Drizzle Deck Corner'
+      ]
     },
     {
-      id: 3,
-      title: "Badminton Court",
-      category: "sports",
-      icon: <MdSportsTennis className="text-4xl" />,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657166/side-view-empty-paddle-tennis-field_eurjb5.jpg",
-      description: "Professional badminton courts"
+      id: 'Sports Zone (Outdoor)',
+      icon: <MdSportsCricket className="text-3xl" />,
+      title: 'Sports Zone (Outdoor)',
+      items: [
+        'Multi-purpose Play Court', 'Cricket Pitch', 'Rainbow Play Court',
+        'Fitness Station', 'Jogging Track', 'Skating Rink', 'Raindrop Play Zone',
+        'Pickle Ball Court', 'Family Picnic Lawn'
+      ]
     },
     {
-      id: 4,
-      title: "Kids Play Area",
-      category: "leisure",
-      icon: <GiPartyPopper className="text-4xl" />,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657260/outdoors-colorful-children-playground-background-min_ywoxyl.jpg",
-      description: "Safe and fun play area for children"
+      id: 'Sports Zone (Indoor/Club)',
+      icon: <FaTableTennis className="text-3xl" />,
+      title: 'Sports Zone (Indoor/Club)',
+      items: [
+        '2 Badminton Courts', '2 Squash Courts', 'Pickleball Courts',
+        'Smash Cricket', 'Viewing Gallery'
+      ]
     },
     {
-      id: 5,
-      title: "Jogging Track",
-      category: "fitness",
-      icon: <FiWind className="text-4xl" />,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657730/alex-mccarthy-kNqX2Z-C0I8-unsplash_mk3zdp.jpg",
-      description: "2km jogging track amidst greenery"
+      id: 'Wellness Zone',
+      icon: <FaSpa className="text-3xl" />,
+      title: 'Wellness Zone',
+      items: [
+        'Heated Pool', 'Ice/Cold Bath', 'Male & Female Wellness Lounge (Spa)',
+        'Salon', 'Gymnasium / Kicking / Boxing Room', 'Yoga / Aerobics / Zumba / Pilates Room'
+      ]
     },
     {
-      id: 6,
-      title: "Clubhouse",
-      category: "leisure",
-      icon: <FiTv className="text-4xl" />,
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800",
-      description: "75,000 sq.ft premium clubhouse"
+      id: 'Entertainment Zone',
+      icon: <FaGamepad className="text-3xl" />,
+      title: 'Entertainment Zone',
+      items: [
+        'Arcade Junction', 'Bowling Alley', 'Air Hockey', 'Foosball Table',
+        'Basketball Table', 'Virtual Game Simulator', 'Karaoke Room',
+        'Billiards Room', 'Card Room', 'Carrom Room', 'Mini Theater', 'Music Room'
+      ]
     },
     {
-      id: 7,
-      title: "Tennis Court",
-      category: "sports",
-      icon: <GiTennisCourt className="text-4xl" />,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657726/asphalt-tennis-court-5354328_1280_fmrkjd.jpg",
-      description: "Professional tennis courts"
+      id: 'Social Zone (Outdoor)',
+      icon: <FaUsers className="text-3xl" />,
+      title: 'Social Zone (Outdoor)',
+      items: [
+        'Celebration Activity Lawn', 'Barbecue Pavilion', 'Rain Amphitheater',
+        'Senior Citizens Pavilion', 'Pet Park', 'Prayer Hall', 'Paved Activity Plaza'
+      ]
     },
     {
-      id: 8,
-      title: "Basketball Court",
-      category: "sports",
-      icon: <GiBasketballBall className="text-4xl" />,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657259/basketball-sport-environment-filed-min_gkchyt.jpg",
-      description: "Full-size basketball court"
+      id: 'Social Zone (Clubhouse)',
+      icon: <FaGlassCheers className="text-3xl" />,
+      title: 'Social Zone (Clubhouse)',
+      items: [
+        'Banquet Hall', 'Pre-function Area', 'Banquet Spill-over Lawn',
+        'Party Hall', 'Restaurant', 'Creche', 'Business Centre (Work Station)'
+      ]
     },
     {
-      id: 9,
-      title: "Security Cams",
-      category: "security",
-      icon: <PiSecurityCamera className='text-5xl'/>,
-      image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1764657736/medium-shot-blurry-woman-indoors_vls9eg.jpg",
-      description: "All time security"
+      id: 'Terrace Amenity Zone',
+      icon: <FaBuilding className="text-3xl" />,
+      title: 'Terrace Amenity Zone',
+      items: [
+        'Sky Veranda', 'Sky Breeze Pavilion', 'Horizon Viewing Deck', 'Terrace Lawn'
+      ]
     }
   ];
 
-  const filteredAmenities = activeCategory === 'all' 
-    ? amenities 
-    : amenities.filter(item => item.category === activeCategory);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % filteredAmenities.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + filteredAmenities.length) % filteredAmenities.length);
-  };
-
   return (
-    <section id="amenities" className="py-10 bg-gradient-to-b from-white to-gray-50">
+    <section id="amenities" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -124,163 +115,111 @@ const Amenities = () => {
             Luxury That Serves Every Need
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            World-class amenities designed for your comfort, entertainment, and well-being
+            World-class amenities divided into specialized zones designed for your comfort, entertainment, and well-being.
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {amenitiesCategories.map((category) => (
-            <motion.button
-              key={category.id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                setActiveCategory(category.id);
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-3 rounded-full font-medium transition-all cursor-pointer ${
-                activeCategory === category.id
-                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-amber-400'
-              }`}
-            >
-              {category.name}
-            </motion.button>
-          ))}
-        </div>
-
-        {/* Carousel for Mobile */}
-        <div className="lg:hidden relative mb-12">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <div className="relative h-64">
-                <img
-                  src={optimizeCloudinary(filteredAmenities[currentSlide]?.image)}
-                  alt={filteredAmenities[currentSlide]?.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
-                {/* Navigation Buttons */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white"
-                >
-                  <FiChevronLeft />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white"
-                >
-                  <FiChevronRight />
-                </button>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center">
-                    <div className="text-amber-600">
-                      {filteredAmenities[currentSlide]?.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {filteredAmenities[currentSlide]?.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600">
-                  {filteredAmenities[currentSlide]?.description}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-6">
-            {filteredAmenities.map((_, index) => (
+        {/* Desktop Tabs */}
+        <div className="hidden lg:flex flex-col md:flex-row gap-8">
+          <div className="w-1/3 flex flex-col space-y-2">
+            {zones.map((zone) => (
               <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide
-                    ? 'bg-amber-500 w-6'
-                    : 'bg-gray-300'
+                key={zone.id}
+                onClick={() => setActiveZone(zone.id)}
+                className={`flex items-center space-x-4 p-4 rounded-xl transition-all text-left ${
+                  activeZone === zone.id
+                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg'
+                    : 'bg-white text-gray-600 hover:bg-amber-50 hover:text-amber-600'
                 }`}
-              />
+              >
+                <div className={`${activeZone === zone.id ? 'text-white' : 'text-amber-500'}`}>
+                  {zone.icon}
+                </div>
+                <span className="font-semibold text-lg">{zone.title}</span>
+              </button>
             ))}
+          </div>
+
+          <div className="w-2/3">
+            <AnimatePresence mode="wait">
+              {zones.map((zone) => 
+                activeZone === zone.id && (
+                  <motion.div
+                    key={zone.id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+                  >
+                    <div className="flex items-center space-x-4 mb-8 pb-6 border-b border-gray-100">
+                      <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center">
+                        {zone.icon}
+                      </div>
+                      <h3 className="text-3xl font-bold text-gray-900">{zone.title}</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {zone.items.map((item, idx) => (
+                        <div key={idx} className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-white text-xs">✓</span>
+                          </div>
+                          <span className="text-gray-700 leading-tight">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* Grid for Desktop */}
-        <div className="hidden lg:grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredAmenities.map((amenity, index) => (
-            <motion.div
-              key={amenity.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={optimizeCloudinary(amenity.image)}
-                  alt={amenity.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                  <div className="text-white">
-                    {amenity.icon}
+        {/* Mobile Accordion */}
+        <div className="lg:hidden space-y-4">
+          {zones.map((zone) => (
+            <div key={zone.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <button
+                onClick={() => setActiveZone(activeZone === zone.id ? '' : zone.id)}
+                className={`w-full flex items-center justify-between p-4 transition-colors ${
+                  activeZone === zone.id ? 'bg-amber-50 text-amber-700' : 'text-gray-700'
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <div className={`${activeZone === zone.id ? 'text-amber-600' : 'text-gray-400'}`}>
+                    {zone.icon}
                   </div>
+                  <span className="font-semibold">{zone.title}</span>
                 </div>
-              </div>
+                {activeZone === zone.id ? <FiChevronUp /> : <FiChevronDown />}
+              </button>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {amenity.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {amenity.description}
-                </p>
-              </div>
-            </motion.div>
+              <AnimatePresence>
+                {activeZone === zone.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-4 bg-gray-50/50 border-t border-gray-100">
+                      <ul className="space-y-3">
+                        {zone.items.map((item, idx) => (
+                          <li key={idx} className="flex items-start space-x-3">
+                            <div className="w-5 h-5 bg-amber-200 text-amber-700 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <span className="text-[10px]">✓</span>
+                            </div>
+                            <span className="text-gray-600 text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
-
-        {/* Additional Features */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 text-white"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: <FiWifi />, title: "High-Speed WiFi", desc: "Fiber optic connectivity" },
-              { icon: <MdSecurity />, title: "24/7 Security", desc: "CCTV & security patrol" },
-              { icon: <MdLocalParking />, title: "Smart Parking", desc: "Reserved with EV charging" },
-              { icon: <FiSun />, title: "Solar Power", desc: "Eco-friendly energy" }
-            ].map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <div className="text-2xl text-amber-400">
-                    {feature.icon}
-                  </div>
-                </div>
-                <h4 className="font-bold mb-1">{feature.title}</h4>
-                <p className="text-gray-300 text-sm">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

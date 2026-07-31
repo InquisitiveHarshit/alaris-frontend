@@ -5,9 +5,12 @@ import Overview from './Overview';
 import Highlights from './Highlights';
 import Amenities from './Amenities';
 import PriceList from './PriceList';
+import PaymentPlan from './PaymentPlan';
 import FloorPlan from './FloorPlan';
 import Gallery from './Gallery';
 import Location from './Location';
+import Connectivity from './Connectivity';
+import DesignTeam from './DesignTeam';
 import Footer from './Footer';
 import Modal from './Modal';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -45,8 +48,11 @@ function Home() {
       <Hero openModal={openModal} />
       <Overview openModal={openModal}/>
       <Highlights />
+      <Connectivity />
       <Amenities />
+      <DesignTeam />
       <PriceList openModal={openModal} />
+      <PaymentPlan />
       <FloorPlan openModal={openModal} />
       <Gallery />
       <Location />

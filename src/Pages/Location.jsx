@@ -1,71 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiMapPin, FiNavigation, FiClock, FiHome, FiBriefcase, FiHeart, FiShoppingBag } from 'react-icons/fi';
+import { FiMapPin, FiNavigation, FiClock, FiHome, FiBriefcase, FiHeart, FiShoppingBag, FiMap } from 'react-icons/fi';
 import { MdSchool, MdLocalHospital, MdLocalAirport, MdTheaterComedy } from 'react-icons/md';
 import { optimizeCloudinary } from '../utils/cloudianry';
 
-
 const Location = () => {
-  const locationAdvantages = [
-    {
-      icon: <MdLocalAirport className="text-2xl" />,
-      title: "Jewar International Airport",
-      distance: "15 Mins",
-      description: "Upcoming world-class international airport"
-    },
-    {
-      icon: <MdTheaterComedy className="text-2xl" />,
-      title: "Film City",
-      distance: "5 Mins",
-      description: "Proposed Bollywood film city"
-    },
-    {
-      icon: <MdSchool className="text-2xl" />,
-      title: "Gautam Buddha University",
-      distance: "20 Mins",
-      description: "Premier educational institution"
-    },
-    {
-      icon: <MdLocalHospital className="text-2xl" />,
-      title: "Jaypee Hospital",
-      distance: "10 Mins",
-      description: "Multi-specialty hospital"
-    },
-    {
-      icon: <FiShoppingBag className="text-2xl" />,
-      title: "Pari Chowk",
-      distance: "10 Mins",
-      description: "Major commercial and retail hub"
-    },
-    {
-      icon: <FiHome className="text-2xl" />,
-      title: "Formula 1 Track",
-      distance: "25 Mins",
-      description: "Buddh International Circuit"
-    },
-    {
-      icon: <FiBriefcase className="text-2xl" />,
-      title: "Commercial Hubs",
-      distance: "Various",
-      description: "Close to major IT and business parks"
-    },
-    {
-      icon: <FiHome className="text-2xl" />,
-      title: "Residential Townships",
-      distance: "Adjacent",
-      description: "Surrounded by premium residential projects"
-    }
+  const distances = [
+    { location: "World's Tallest Lord Shri Krishna Murti", distance: "3 km" },
+    { location: "Gaurs International School", distance: "3 km" },
+    { location: "Upcoming mall, Gaur Yamuna City", distance: "3 km" },
+    { location: "Eastern Peripheral Expressway", distance: "10 km" },
+    { location: "Noida International Airport (Jewar)", distance: "16 km" },
+    { location: "Noida-Greater Noida Expressway", distance: "18 km" }
   ];
 
-  const connectivity = [
-    { route: "Yamuna Expressway", time: "Direct Access", icon: <FiHome /> },
-    { route: "Noida-Greater Noida Expressway", time: "18 Mins", icon: <FiNavigation /> },
-    { route: "Eastern Peripheral Expressway", time: "10 Mins", icon: <FiHome /> },
-    { route: "Delhi NCR", time: "45 Mins", icon: <FiClock /> }
+  const landmarks = [
+    "Pari Chowk", "Metro Station", "Gautam Buddha University", "Sharda University", 
+    "Galgotias University", "Jaypee Hospital", "Amity University", "IT Park", 
+    "F1 Track", "International Cricket Stadium", "Gaur Yamuna City", 
+    "Gaurs International School", "Medical Device Park", "Metro Coach Factory", 
+    "Toy City", "Film City", "Vivo", "Patanjali"
   ];
 
   return (
-    <section id="location" className="py-10 bg-gradient-to-b from-amber-50 to-amber-100">
+    <section id="location" className="py-20 bg-gradient-to-b from-amber-50 to-amber-100">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -80,7 +38,7 @@ const Location = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Prime Location Unbeatable Connectivity
+            Prime Location, Unbeatable Connectivity
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Strategically located at the heart of Yamuna Expressway with excellent connectivity
@@ -99,9 +57,8 @@ const Location = () => {
               {/* Map Placeholder */}
               <div className="relative h-96 bg-gradient-to-br from-gray-100 to-gray-200">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                   
-                    <img src={optimizeCloudinary("https://res.cloudinary.com/djvps0arr/image/upload/v1785493188/eb302aae-14da-43a6-8f88-9f0af94ed2b9.png")} alt="location" className='h-full w-full ' />
+                  <div className="text-center w-full h-full">
+                    <img src={optimizeCloudinary("https://res.cloudinary.com/djvps0arr/image/upload/v1785493188/eb302aae-14da-43a6-8f88-9f0af94ed2b9.png")} alt="location" className='h-full w-full object-cover' />
                   </div>
                 </div>
                 
@@ -115,79 +72,40 @@ const Location = () => {
               <div className="p-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
                 <h3 className="text-xl font-bold mb-2">Exact Location</h3>
                 <p className="text-gray-300">
-                  Plot-12, Sector 22D, Yamuna Expressway, Greater Noida, Uttar Pradesh 201308
+                  Sector 22D, Yamuna Expressway, Greater Noida, Uttar Pradesh 201308
                 </p>
               </div>
             </div>
 
-            {/* Connectivity Info */}
+            {/* Distances Widget */}
             <div className="mt-8 bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Connectivity Highlights</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                <FiMap className="text-amber-500 mr-3" />
+                Key Distances
+              </h3>
               <div className="space-y-4">
-                {connectivity.map((route, index) => (
+                {distances.map((item, index) => (
                   <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                        <div className="text-amber-600">
-                          {route.icon}
-                        </div>
-                      </div>
-                      <span className="font-medium text-gray-800">{route.route}</span>
-                    </div>
-                    <span className="text-amber-600 font-semibold">{route.time}</span>
+                    <span className="font-medium text-gray-800">{item.location}</span>
+                    <span className="text-amber-600 font-bold bg-amber-100 px-3 py-1 rounded-full whitespace-nowrap">{item.distance}</span>
                   </div>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Location Advantages */}
+          {/* Location Advantages / Landmarks */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {locationAdvantages.map((advantage, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <div className="text-amber-600">
-                        {advantage.icon}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex items-center space-x-2 mb-2">
-                        <span className="text-lg font-bold text-gray-900">
-                          {advantage.title}
-                        </span>
-                        <span className="px-3 py-1 bg-amber-100 text-amber-600 text-xs font-bold rounded-full">
-                          {advantage.distance}
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm">
-                        {advantage.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
             {/* Investment Potential */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-8 bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-8 text-white mb-8"
             >
               <h3 className="text-2xl font-bold mb-4">Investment Potential</h3>
               <div className="grid grid-cols-2 gap-6">
@@ -205,29 +123,18 @@ const Location = () => {
               </p>
             </motion.div>
 
-            {/* Future Developments */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="mt-8 bg-white rounded-2xl p-6 shadow-lg"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Upcoming Developments</h3>
-              <div className="space-y-3">
-                {[
-                  "Olympic City (Proposed)",
-                  "Medicity Healthcare Hub",
-                  "IT & Tech Parks",
-                  "International Schools",
-                  "Shopping Malls & Retail"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full" />
-                    <span className="text-gray-700">{item}</span>
+            {/* Landmarks Grid */}
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b pb-4">Nearby Landmarks</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-4">
+                {landmarks.map((landmark, index) => (
+                  <div key={index} className="flex items-start space-x-2 group">
+                    <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 group-hover:scale-150 transition-transform"></div>
+                    <span className="text-gray-700 text-sm font-medium">{landmark}</span>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

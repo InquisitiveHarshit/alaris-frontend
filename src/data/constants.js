@@ -5,9 +5,9 @@ export const PROJECT_INFO = {
   type: "3 & 4 BHK Luxury Apartments",
   reraNumber: "UPRERAPRJ950965/07/2026",
   developer: "Gaurs Group",
-  totalArea: "12 Acres",
-  towers: 7,
-  clubhouse: "75,000 sq.ft",
+  totalArea: "11.8 Acres",
+  towers: 8,
+  clubhouse: "1,00,000 sq.ft",
   units: 950,
 };
 

@@ -50,19 +50,25 @@ const Overview = ({openModal}) => {
             <div className="space-y-4 text-gray-600 mb-8">
               <p>
                 Gaurs Group introduces Gaur Alaris (Phase 1) at Yamuna Expressway. 
-                It is a thoughtfully designed RERA-approved residential project on 12-acres. 
-                With world-class amenities that envelop luxury, the lush green landscape 
-                here offers serenity.
+                It is a thoughtfully designed RERA-approved residential project spanning 11.8 acres of planned development. 
+                With world-class amenities that envelop luxury, the 8 acres of peacock-inspired landscape greens 
+                here offer unparalleled serenity.
               </p>
               <p>
-                Here, 7 towers, and 75000 sq.ft modern clubhouse, captivate residents with 
-                a majestic skyline and city view. Also, the voluminous layout offers the best 
-                3BHK and 4BHK apartments at the Yamuna Expressway.
+                Here, 8 towers (34 storey) featuring Art Deco architecture and the ~1,00,000 sq.ft. Club Regalia (85,000 sq.ft. BUA + 15,000 sq.ft. Terrace across 5 levels) captivate residents with 
+                a majestic skyline and city view.
               </p>
-              <p>
-                The premium conveniences and advanced security amplify an elegant living standard. 
-                The gated community has a play area and recreational sphere too.
-              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-center text-sm font-semibold text-gray-800">
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">3</div>Decades of Commitment</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">75+</div>Delivered Projects</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">45k+</div>Possessions (2014-25)</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">75k+</div>Units Delivered</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">3 Lakh+</div>Satisfied Customers</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">100M+</div>Sq.ft. Delivered</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">7</div>Business Verticals</div>
+               <div className="p-3 bg-amber-50 rounded-lg shadow-sm border border-amber-100"><div className="text-xl text-amber-600 mb-1">1</div>Legacy of Trust</div>
             </div>
 
             <motion.button

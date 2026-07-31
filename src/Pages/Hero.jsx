@@ -44,32 +44,6 @@ const Hero = ({ openModal }) => {
 
             </h1>
 
-            <h2 className="text-xl md:text-3xl font-light mb-8 text-gray-200">
-              3 & 4 BHK Luxury Apartments
-            </h2>
-
-            {/* Features */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
-                  <MdKingBed className="text-2xl text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Apartments</p>
-                  <p className="text-lg font-semibold">3 & 4 BHK</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
-                  <MdSquareFoot className="text-2xl text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Project Area</p>
-                  <p className="text-lg font-semibold">12 Acres</p>
-                </div>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
@@ -111,12 +85,14 @@ const Hero = ({ openModal }) => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
         >
           {[
-            { label: 'Price', value: 'On Request' },
+            { label: 'Project Area', value: '11.8 Acres' },
             { label: 'RERA No.', value: 'UPRERAPRJ950965/07/2026' },
-            { label: 'Towers', value: '7 Towers' },
+            { label: 'Towers', value: '8 Towers (34 Storey)' },
+            { label: 'Architecture', value: 'Art Deco' },
+            { label: 'Clubhouse', value: '1,00,000 sq.ft. Club Regalia' },
           ].map((item, index) => (
             <div
               key={index}
